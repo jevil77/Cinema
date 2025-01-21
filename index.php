@@ -52,6 +52,8 @@ if(isset($_GET["action"])){
         case "addActeur" :$ctrlCinema->addActeur(); break;
         case "addCastingForm" :$ctrlCinema->addCastingForm(); break;
         case "addCasting" :$ctrlCinema->addCasting(); break;
+        case "addFilmForm" :$ctrlCinema->addFilmForm(); break;
+        case "addFilm" :$ctrlCinema->addFilm(); break;
 
 
         // Quand vous faites une requête dans lequel on a un élément variable (comme ici l'id de l'acteur), il faut bien faire un "prepare" (et pas un "query") pour ensuite faire un "execute"

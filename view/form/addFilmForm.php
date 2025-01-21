@@ -128,8 +128,8 @@ border: 2px solid #600000; /* Bordures rouges foncées */}
 
 
 <?php
-$titre = "Ajouter un rôle";
-$titre_secondaire = "Ajouter un rôle";
+$titre = "Ajouter un film";
+$titre_secondaire = "Ajouter un film";
 $contenu = ob_get_clean();                 // Efface le contenu du tampon de sortie actif
 require "view/template.php";
 // Inclut un template (modèle) qui doit être responsable de l'affichage final de la page
