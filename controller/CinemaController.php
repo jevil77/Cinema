@@ -435,7 +435,7 @@ class CinemaController {
             
 
 
-            public function addFilmForm(){
+            /*public function addFilmForm(){
 
                 $pdo = Connect::seConnecter();
 
@@ -525,7 +525,7 @@ class CinemaController {
                         ":realisateur" => $realisateur
                     ]);
 
-                $id_film = $pdo->lastInsertId();
+                $id_film = $pdo->lastInsertId(); 
 
 
 
@@ -557,7 +557,7 @@ class CinemaController {
 
          }
 
-        }
+        }*/
 }
         
             
