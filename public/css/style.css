@@ -1,0 +1,216 @@
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Nav Bar Styles */
+  .navbar {
+    background-color: #222; /* Dark background for contrast */
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Container for Links */
+  .navbar-container {
+    display: flex;
+    gap: 1rem; /* Space between links */
+  }
+  
+  /* Link Styles */
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Hover and Active States */
+  .nav-link:hover {
+    background-color: #575757; /* Slight background change on hover */
+    color: #f0c040; /* Highlight color for hover */
+  }
+  
+  .nav-link.active {
+    background-color: #f0c040; /* Highlight active link */
+    color: #333;
+  }
+  
+  /* Branding (e.g., Wiki Movies) */
+  .nav-link.brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #f0c040;
+  }
+
+
+
+ /* Global Styles */
+body {
+  font-family: 'Creepster', Arial, sans-serif; /* Police effrayante */
+  background-color: #0d0d0d; /* Fond noir */
+  color: #f5f5f5; /* Texte blanc cassé */
+  margin: 0;
+  padding: 0;
+}
+
+/* Table Styles */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #1c1c1c; /* Fond sombre des tableaux */
+  border: 2px solid #600000; /* Bordures rouges foncées */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+}
+
+table thead {
+  background-color: #600000; /* Rouge sang */
+  color: #f5f5f5; /* Texte blanc cassé */
+  font-size: 1.1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+table th,
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #800000; /* Ligne rouge sombre */
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #292929; /* Gris très sombre */
+}
+
+table tbody tr:hover {
+  background-color: #400000; /* Rouge sombre à survol */
+}
+
+table img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+h1 {
+
+  font-family: 'Creepster';
+
+
+}
+/* Headers */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #800000; /* Rouge sang */
+  font-family: 'Creepster', Arial, sans-serif;
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* Styling Links */
+a {
+  text-decoration: none;
+  color: #ff4500; /* Rouge vif */
+  transition: color 0.3s, text-shadow 0.3s;
+  text-shadow: 0 0 6px #ff0000; /* Effet lumineux */
+}
+
+a:hover {
+  color: #ff0000; /* Rouge plus vif au survol */
+  text-shadow: 0 0 12px #ff4500;
+}
+
+/* Buttons */
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #600000;
+  color: #f5f5f5;
+  border: 2px solid #800000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: 'Creepster', Arial, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px #000;
+}
+
+button:hover {
+  background-color: #800000; /* Rouge plus vif */
+  border-color: #ff0000; /* Bordure plus vive */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  table {
+      width: 100%;
+  }
+
+  table thead {
+      font-size: 1em;
+  }
+
+  table th,
+  table td {
+      padding: 10px;
+  }
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte */
+  text-align: center;
+  text-decoration: none; /* Supprime le soulignement du lien */
+  border-radius: 5px; /* Bords arrondis */
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+
+
+
+
+
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .navbar-container {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .nav-link {
+      width: 100%;
+      text-align: left;
+      padding: 0.8rem 1rem;
+    }
+  }
+  
