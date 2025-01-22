@@ -33,6 +33,7 @@ $film = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu d
             <th>Synopsis</th>
             <th>Affiche</th>
             <th>Note</th>
+            <th>Réalisateur</th>
         </tr>
     </thead>
     <tbody>
@@ -45,6 +46,9 @@ $film = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu d
                <td><?=$film["synopsis"] ?></td>
                <td><img src="public\img\img_film\<?=$film["affiche_film"] ?>" alt="Affiche du film" style="max-width: 200px; height: auto;"></td>
                <td><?=$film["note"] ?></td>
+               <td><?=$film["nom_realisateur"]?></td>
+
+               
 
            </tr>
 
@@ -72,6 +76,7 @@ $film = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu d
             <th>Prenom</th>
             <th>Sexe</th>
             <th>Date de naissance</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -95,6 +100,9 @@ $film = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu d
     </tbody>
 
 </table>
+
+
+
 
 
 

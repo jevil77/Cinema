@@ -61,7 +61,7 @@ $acteur = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu
             
             <th>Titre</th>
             <th>Année de sortie</th>
-            <th>Affiche de</tH>
+            <th>Affiche de</th>
             
             
         </tr>
@@ -71,7 +71,7 @@ $acteur = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu
                <td><?=$filmDetail["titre"] ?></td>
                <td><?=$filmDetail["annee_sortie"] ?></td>
                <td><img src="public\img\img_film\<?=$filmDetail["affiche_film"] ?>" alt="Affiche du film" style="max-width: 200px; height: auto;"></td>
-
+               
 
            </tr> 
 

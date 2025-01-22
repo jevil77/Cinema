@@ -40,72 +40,63 @@ border: 2px solid #600000; /* Bordures rouges foncées */}
 
 </style>
 
-<?php 
-// Récupérez tous les résultats avant d'utiliser fetchAll()
 
-
-
-?>
 
 <div class="form">
-<form action="index.php?action=addCasting" method="POST">
+<form action="index.php?action=addFilm" method="POST">
 
-<label for="personnages">Personnage :</label>
-        <select name="personnages" id="personnages" required>
-            
-            <?php foreach ($requetePersonnage->fetchAll() as $personnage) { ?>
-                <option value="<?=($personnage["id_personnage"]) ?>">
-                    <?= ($personnage["nom_personnage"]) ?>
-                </option>
-                <?php } ?>
-              
+    <label for="titre">Titre du film :</label>
+    <input type="text" id="titre" name="titre" placeholder="Titre du film" required>
+    <br>
+    
+     <label for="annee_sortie">Année de sortie :</label>
+    <input type="number" id="annee_sortie" name="annee_sortie" placeholder="Année de sortie" required>
+    <br>
 
+    <label for="duree">Durée (en minutes) :</label>
+    <input type="number" id="duree" name="duree" placeholder="Durée en minutes" required>
+    <br>
 
-        </select>
-        <br><br>
+    <label for="synopsis">Synopsis :</label>
+    <textarea id="synopsis" name="synopsis" placeholder="Résumé du film" required></textarea>
+    <br>
+    
+    <label for="affiche_film">URL de l'affiche :</label>
+    <input type="url" id="affiche_film" name="affiche_film" placeholder="Lien de l'affiche" required>
+    <br>
+    
+    <label for="note">Note (sur 10) :</label>
+    <input type="number" id="note" name="note" placeholder="Note du film" min="0" max="10" required>
+    <br>
 
+    <label for="realisateur">Réalisateur :</label>
+    <select id="realisateur" name="realisateur" required>
+    <option value="">Choisir un réalisateur</option>
+      <?php foreach ($requeteReal->fetchAll() as $realisateur) { ?>
+            <option value="<?= $realisateur['id_realisateur'] ?>">
+                <?= ($realisateur['realisateur']) ?>
+            </option>
+        <?php } ?> 
+    </select>
+    <br>
+    
 
+    <!-- <?php
+        foreach($genres as $genre) { ?>
+            <input type="checkbox" name="genre[]" 
+                    id="<?= $genre["libelle"] ?>"
+                    value="<?= $genre["id_genre"] ?> ">
+            <label for="<?= $genre["libelle"] ?>">
+                    <?= $genre["libelle"] ?>
+            </label><br>
+    <?php    } ?>
+   -->
 
-        <label for="acteurs">Acteur :</label>
-        <select name="acteurs" id="acteurs" required>
-            
-            <?php foreach ($requeteActeur->fetchAll() as $acteur) {?>
-                <option value="<?=($acteur["id_acteur"]) ?>">
-                    <?=($acteur["nom_acteur"]) ?>
-                </option>
-                <?php } ?>
-
-        </select>
-        <br><br>
-
-
-
-        <label for="films">Film :</label>
-        <select name="films" id="films" required>
-            
-            <?php foreach ($requeteFilm->fetchAll()as $film){ ?>
-                <option value="<?=($film["id_film"]) ?>">
-                    <?=($film["titre"]) ?>
-                </option>
-                <?php } ?>
-
-        </select>
-        <br><br>
-
-
-
-        <button type="submit" name="submit">Ajouter le casting</button>
-    </form>
-</div>
-</body>
-</html>
-
+    <button type="submit" name="submit">Ajouter le film</button>
 
 
-
-
-
-
+    
+</form>
 
 
 

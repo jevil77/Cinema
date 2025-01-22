@@ -37,6 +37,13 @@
 
 </table>
 
+
+
+<a href="index.php?action=addFilmForm">
+
+<button id="add-category-btn">Ajouter un film</button> 
+</a>
+
 <?php
 
 $titre = "Liste des films";
