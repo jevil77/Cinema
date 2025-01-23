@@ -80,9 +80,9 @@ border: 2px solid #600000; /* Bordures rouges foncées */}
     </select>
     <br>
     
-
-    <!-- <?php
-        foreach($genres as $genre) { ?>
+<h4>Sélectionnez un genre : </h4>
+   <?php
+        foreach($requeteGenres->fetchAll() as $genre) { ?>
             <input type="checkbox" name="genre[]" 
                     id="<?= $genre["libelle"] ?>"
                     value="<?= $genre["id_genre"] ?> ">
@@ -90,7 +90,7 @@ border: 2px solid #600000; /* Bordures rouges foncées */}
                     <?= $genre["libelle"] ?>
             </label><br>
     <?php    } ?>
-   -->
+   
 
     <button type="submit" name="submit">Ajouter le film</button>
 

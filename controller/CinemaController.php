@@ -454,7 +454,7 @@ class CinemaController {
                 ");
 
 
-                $requetteGenre = $pdo->query("
+                $requeteGenres = $pdo->query("
                  SELECT genre.id_genre, genre.libelle
             FROM genre
             ORDER BY genre.libelle ASC
@@ -487,11 +487,11 @@ class CinemaController {
                 $affiche_film = filter_input(INPUT_POST,"affiche_film",FILTER_VALIDATE_URL); 
                 $note = filter_input(INPUT_POST,"note",FILTER_VALIDATE_INT);
                 $realisateur = filter_input(INPUT_POST,"realisateur",FILTER_VALIDATE_INT);
-                //$genre = filter_input(INPUT_POST,"genre",FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+                $genre = filter_input(INPUT_POST,"genre",FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 
-                var_dump($titre, $annee_sortie, $duree, $synopsis, $affiche_film, $note, $realisateur);
+                var_dump($titre, $annee_sortie, $duree, $synopsis, $affiche_film, $note, $realisateur, $genre);
 
-                if($titre && $annee_sortie && $duree && $synopsis && $affiche_film && $note && $realisateur) {
+                if($titre && $annee_sortie && $duree && $synopsis && $affiche_film && $note && $realisateur && $genre) {
 
 
                 $requeteFilm = $pdo->prepare("
@@ -512,22 +512,22 @@ class CinemaController {
                         ":realisateur" => $realisateur,
                     ]);
             
-                //  $id_film = $pdo->lastInsertId(); 
+                  $id_film = $pdo->lastInsertId(); 
 
 
-                //  foreach($genres as $genre) {
-                //     $requeteGenres = $pdo->prepare("
-                //         INSERT INTO appartenir (id_film, id_genre)
-                //          VALUES (:id_film, :id_genre)
-                //      ");
+                  foreach($genre as $genre) {
+                     $requeteGenres = $pdo->prepare("
+                        INSERT INTO appartenir (id_film, id_genre)
+                         VALUES (:id_film, :id_genre)
+                     ");
                 
-                //     $requeteGenres->execute([
-                //          ":id_film" => $id_film,
-                //         ":id_genre" => $genre
-                //     ]);
+                   $requeteGenres->execute([
+                          ":id_film" => $id_film,
+                         ":id_genre" => $genre
+                     ]);
 
                     
-                //   }
+                  }
                 
                 header('Location:index.php?action=listFilms');
                 exit;
