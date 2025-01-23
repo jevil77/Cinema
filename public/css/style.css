@@ -1,30 +1,30 @@
-/* Reset */
+
 body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
-  /* Nav Bar Styles */
+  
   .navbar {
-    background-color: #222; /* Dark background for contrast */
+    background-color: #222; 
     padding: 0.8rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
     position: sticky;
     top: 0;
     z-index: 1000;
   }
   
-  /* Container for Links */
+  
   .navbar-container {
     display: flex;
-    gap: 1rem; /* Space between links */
+    gap: 1rem; 
   }
   
-  /* Link Styles */
+  
   .nav-link {
     color: white;
     text-decoration: none;
@@ -35,18 +35,18 @@ body, html {
     border-radius: 5px;
   }
   
-  /* Hover and Active States */
+  
   .nav-link:hover {
-    background-color: #575757; /* Slight background change on hover */
-    color: #f0c040; /* Highlight color for hover */
+    background-color: #575757; 
+    color: #f0c040; 
   }
   
   .nav-link.active {
-    background-color: #f0c040; /* Highlight active link */
+    background-color: #f0c040; 
     color: #333;
   }
   
-  /* Branding (e.g., Wiki Movies) */
+  
   .nav-link.brand {
     font-weight: bold;
     font-size: 1.2rem;
@@ -55,29 +55,29 @@ body, html {
 
 
 
- /* Global Styles */
+ 
 body {
-  font-family: 'Creepster', Arial, sans-serif; /* Police effrayante */
-  background-color: #0d0d0d; /* Fond noir */
-  color: #f5f5f5; /* Texte blanc cassé */
+  font-family: 'Creepster', Arial, sans-serif; 
+  background-color: #0d0d0d; 
+  color: #f5f5f5; 
   margin: 0;
   padding: 0;
 }
 
-/* Table Styles */
+
 table {
   width: 90%;
   margin: 20px auto;
   border-collapse: collapse;
-  background-color: #1c1c1c; /* Fond sombre des tableaux */
-  border: 2px solid #600000; /* Bordures rouges foncées */
+  background-color: #1c1c1c; 
+  border: 2px solid #600000; 
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
   border-radius: 8px;
 }
 
 table thead {
-  background-color: #600000; /* Rouge sang */
-  color: #f5f5f5; /* Texte blanc cassé */
+  background-color: #600000; 
+  color: #f5f5f5; 
   font-size: 1.1em;
   text-align: left;
   text-transform: uppercase;
@@ -87,15 +87,15 @@ table th,
 table td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #800000; /* Ligne rouge sombre */
+  border-bottom: 1px solid #800000; 
 }
 
 table tbody tr:nth-child(even) {
-  background-color: #292929; /* Gris très sombre */
+  background-color: #292929;
 }
 
 table tbody tr:hover {
-  background-color: #400000; /* Rouge sombre à survol */
+  background-color: #400000; 
 }
 
 table img {
@@ -109,29 +109,29 @@ h1 {
 
 
 }
-/* Headers */
+
 h2 {
   text-align: center;
   margin-top: 20px;
-  color: #800000; /* Rouge sang */
+  color: #800000; 
   font-family: 'Creepster', Arial, sans-serif;
   text-shadow: 2px 2px 4px #000;
 }
 
-/* Styling Links */
+
 a {
   text-decoration: none;
-  color: #ff4500; /* Rouge vif */
+  color: #ff4500; 
   transition: color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 6px #ff0000; /* Effet lumineux */
+  text-shadow: 0 0 6px #ff0000; 
 }
 
 a:hover {
-  color: #ff0000; /* Rouge plus vif au survol */
+  color: #ff0000; 
   text-shadow: 0 0 12px #ff4500;
 }
 
-/* Buttons */
+
 button {
   display: block;
   margin: 20px auto;
@@ -148,11 +148,11 @@ button {
 }
 
 button:hover {
-  background-color: #800000; /* Rouge plus vif */
-  border-color: #ff0000; /* Bordure plus vive */
+  background-color: #800000; 
+  border-color: #ff0000; 
 }
 
-/* Responsive Design */
+
 @media screen and (max-width: 768px) {
   table {
       width: 100%;
@@ -172,17 +172,17 @@ button:hover {
 .btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff; /* Couleur de fond du bouton */
-  color: white; /* Couleur du texte */
+  background-color: #007bff; 
+  color: white; 
   text-align: center;
-  text-decoration: none; /* Supprime le soulignement du lien */
-  border-radius: 5px; /* Bords arrondis */
+  text-decoration: none; 
+  border-radius: 5px; 
   font-size: 16px;
   transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Couleur de fond au survol */
+  background-color: #0056b3; 
 }
 
 
@@ -192,10 +192,10 @@ button:hover {
 
 
 
-/* Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
-  /* Responsive Design */
+  
   @media (max-width: 768px) {
     .navbar {
       flex-direction: column;

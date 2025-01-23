@@ -38,6 +38,10 @@
 </table>
 
 
+<a href="index.php?action=addRealisateurForm">
+
+<button id="add-category-btn">Ajouter un réalisateur</button> 
+</a>
 
 
 

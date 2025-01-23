@@ -539,6 +539,75 @@ class CinemaController {
             }
       require "view/form/addFilmForm.php";
         }
+
+
+
+        // public function addRealisateurForm() {
+
+        //     require "view/form/addRealisateurForm.php";
+            
+        //     }
+
+
+        // public function addRealisateur() {
+
+        //     if(isset($_POST['submit'])){
+
+        //         $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        //         $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        //         $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        //         $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+        //      if ($nom && $prenom && $sexe && $date_naissance) {
+
+        //             // Prépare la requête
+        //             $pdo = Connect::seConnecter();
+        //             $requetePersonne = $pdo->prepare("
+        //             INSERT INTO personne (nom, prenom, sexe, date_naissance)
+        //             VALUES (:nom, :prenom, :sexe, :date_naissance);
+
+                    
+
+                    
+        //             ");
+                    
+        //             // Exécute la requête
+        //             $requetePersonne->execute([
+        //                 "nom" => $nom,
+        //                 "prenom" => $prenom,
+        //                 "sexe" => $sexe,
+        //                 "date_naissance" => $date_naissance
+
+        //             ]);
+
+        //              $newPersonneId = $pdo->lastInsertId();
+
+        //             //Insérer dans la table `acteur`
+        //              $requeteRealisateur = $pdo->prepare("
+        //                 INSERT INTO realisateur (id_personne)
+        //                 VALUES (:id_personne)
+        //              ");
+        //              $requeteRealisateur->execute(["id_personne" => $newPersonneId]);
+        
+
+        //             header("Location: index.php?action=listRealisateur");
+
+                   
+        
+
+
+        //             exit;
+        //         }
+
+
+
+        //     }
+        
+        //            require "view/form/addRealisateurForm.php";
+
+
+        // }
+
     }
         
             
