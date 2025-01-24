@@ -140,17 +140,16 @@ $acteur = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu
 
 
 
-<?php }
+<?php } ?>
+
+<a href="index.php?action=addPersonnage">
+
+ <button id="add-category-btn">Ajouter un personnage</button> 
+ </a>
 
 
 
-
-
-
-
-
-
-
+<?php
 
 $titre = "Détails acteur";
 $titre_secondaire = "Détails acteur";

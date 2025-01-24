@@ -542,73 +542,171 @@ class CinemaController {
 
 
 
-        // public function addRealisateurForm() {
+        public function addRealisateurForm() {
 
-        //     require "view/form/addRealisateurForm.php";
+            require "view/form/addRealisateurForm.php";
             
-        //     }
+            }
 
 
-        // public function addRealisateur() {
+        public function addRealisateur() {
 
-        //     if(isset($_POST['submit'])){
+            if(isset($_POST['submit'])){
 
-        //         $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        //         $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        //         $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-        //         $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $prenom = filter_input(INPUT_POST, "prenom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $sexe = filter_input(INPUT_POST, "sexe", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $date_naissance = filter_input(INPUT_POST, "date_naissance", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-        //      if ($nom && $prenom && $sexe && $date_naissance) {
+             if ($nom && $prenom && $sexe && $date_naissance) {
 
-        //             // Prépare la requête
-        //             $pdo = Connect::seConnecter();
-        //             $requetePersonne = $pdo->prepare("
-        //             INSERT INTO personne (nom, prenom, sexe, date_naissance)
-        //             VALUES (:nom, :prenom, :sexe, :date_naissance);
-
-                    
+                    // Prépare la requête
+                    $pdo = Connect::seConnecter();
+                    $requetePersonne = $pdo->prepare("
+                    INSERT INTO personne (nom, prenom, sexe, date_naissance)
+                    VALUES (:nom, :prenom, :sexe, :date_naissance);
 
                     
-        //             ");
+
                     
-        //             // Exécute la requête
-        //             $requetePersonne->execute([
-        //                 "nom" => $nom,
-        //                 "prenom" => $prenom,
-        //                 "sexe" => $sexe,
-        //                 "date_naissance" => $date_naissance
+                    ");
+                    
+                    // Exécute la requête
+                    $requetePersonne->execute([
+                        "nom" => $nom,
+                        "prenom" => $prenom,
+                        "sexe" => $sexe,
+                        "date_naissance" => $date_naissance
 
-        //             ]);
+                    ]);
 
-        //              $newPersonneId = $pdo->lastInsertId();
+                     $newPersonneId = $pdo->lastInsertId();
 
-        //             //Insérer dans la table `acteur`
-        //              $requeteRealisateur = $pdo->prepare("
-        //                 INSERT INTO realisateur (id_personne)
-        //                 VALUES (:id_personne)
-        //              ");
-        //              $requeteRealisateur->execute(["id_personne" => $newPersonneId]);
+                    //Insérer dans la table `acteur`
+                     $requeteRealisateur = $pdo->prepare("
+                        INSERT INTO realisateur (id_personne)
+                        VALUES (:id_personne)
+                     ");
+                     $requeteRealisateur->execute(["id_personne" => $newPersonneId]);
         
 
-        //             header("Location: index.php?action=listRealisateur");
+                    header("Location: index.php?action=listRealisateurs");
 
                    
         
 
 
-        //             exit;
-        //         }
+                    exit;
+                }
 
 
 
-        //     }
+            }
         
-        //            require "view/form/addRealisateurForm.php";
+                   require "view/form/addRealisateurForm.php";
 
 
-        // }
+        }
+
+
+
+        public function deleteFilm($id) {
+            $pdo = Connect::seConnecter();
+    
+            // on supprime de la table définir 
+            $requeteDeleteAppartenir = $pdo->prepare("
+                DELETE FROM appartenir
+                WHERE id_film = :id
+            ");
+    
+            $requeteDeleteAppartenir->execute([
+                ":id" => $id
+            ]);
+    
+            // on supprime de la table film 
+            $requeteDeleteFilm = $pdo->prepare("
+                DELETE FROM film
+                WHERE id_film = :id
+            ");
+    
+            $requeteDeleteFilm->execute([
+                ":id" => $id
+            ]);
+    
+            header('Location:index.php?action=listFilms');
+            die();
+    
+        }
+        
+  
+
+       
+       
+       
+        public function addPersonnageForm() {
+
+            require "view/form/addPersonnage.php";
+                
+            }
+    
+        
+
+
+        public function addPersonnage($id) {
+
+            if(isset($_POST['submit'])){
+
+                $nom = filter_input(INPUT_POST, "nom", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                var_dump($nom);
+
+             if ($nom) {
+
+                    // Prépare la requête
+                    $pdo = Connect::seConnecter();
+                    $requetePersonnage = $pdo->prepare("
+                    INSERT INTO personnage (nom_personnage)
+                    VALUES (:nom);
+
+                    
+
+                    
+                    ");
+                    
+                    // Exécute la requête
+                    $requetePersonnage->execute([
+                        "nom" => $nom
+                        
+
+                    ]);
+
+                    //  $newPersonneId = $pdo->lastInsertId();
+
+                    // //Insérer dans la table `acteur`
+                    //  $requeteActeur = $pdo->prepare("
+                    //     INSERT INTO acteur (id_personne)
+                    //     VALUES (:id_personne)
+                    //  ");
+                    //  $requeteActeur->execute(["id_personne" => $newPersonneId]);
+        
+
+                    header("Location: index.php?action=listActeurs");
+
+                   
+        
+
+
+                    exit;
+                }
+
+
+
+            }
+
+            require "view/form/addPersonnageForm.php";
 
     }
+
+}
         
             
         

@@ -23,6 +23,9 @@ $film = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu d
     
 </body>
 </html>
+<?php
+
+?>
 
 
 
@@ -117,8 +120,12 @@ $film = $requete->fetch();    // fetch : récupère la ligne suivante d'un jeu d
 
 
 
-<?php }
+<?php } ?>
 
+
+<a href="index.php?action=deleteFilm&id=<?= $film["id_film"] ?>">Supprimer le film</a>
+
+<?php
 $titre = "Détails des films";
 $titre_secondaire = "Détails des films";
 $contenu = ob_get_clean();                 // Efface le contenu du tampon de sortie actif
